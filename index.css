@@ -1,0 +1,135 @@
+/*<div class='Card' >           
+          <img class='Card_img' src='https://img.elo7.com.br/product/zoom/20860FF/imagem-cristo-redentor-em-resina-33-5cm-paineiras.jpg' />   
+          <h2 class='Card_Title' >Something Name</h2>
+          <div class='Card_Infos' >             
+            <button class='Card_Buttons' >
+                Open Now
+            </button>
+          </div>   
+      </div>*/
+
+body, html {
+    margin: 0;
+    padding: 0; 
+    width: 98vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.Container {
+    display: flex;
+    justify-content: space-between;
+    width: 97vw;
+    flex-wrap: wrap;
+    margin: 10px; 
+}
+
+.Card {
+    width: 16em; 
+    height: 454px; 
+    position: relative;
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden; 
+    margin: 20px; 
+    
+}   
+.Card:hover > .Card_Infos  {
+    height: 60%;
+}   
+.Card:hover > .Card_Infos > .Card_Infos_Text {
+    animation-name: opacity;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.Card:hover > .Card_Infos > .Card_Buttons {
+    animation-name: opacity;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+
+.Card_img {
+    z-index: -10;
+    width: 16em; 
+    position: absolute;
+    
+}
+
+.Card_Title {
+    z-index: 20;
+    color: white; 
+    align-self: center;
+
+}
+
+.Card_Infos {
+  z-index: 20; 
+  padding: 10px; 
+  display: flex;
+  flex-direction: column;
+  height: 0;
+  transition: 0.4s;
+}
+
+.Card_Infos_Text {
+    color: rgb(87, 85, 85);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    transition: 0.5s;
+    opacity: 0; 
+    font-weight: 1000;
+    font-size: 20px;
+}
+
+@keyframes opacity {
+    0% {
+       opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+
+.Card_Buttons {
+z-index: 20;
+width: 70%;
+justify-self: center;
+border: none; 
+background-color: rgb(224, 224, 224);  
+align-self: center;
+height: 50px; 
+color: rgb(53, 52, 52); 
+transition: 0.3s;
+cursor: pointer;
+}
+
+.Card_Buttons:hover {
+    transform: scale(1.1);
+}
+
+
+@media screen and (max-width: 600px) {
+.Container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.Card {
+    width: 80%;
+}
+
+
+.Card_img {
+    width: 100%; 
+    
+}
+}
